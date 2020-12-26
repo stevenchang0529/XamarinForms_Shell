@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Shell xmlns="http://xamarin.com/schemas/2014/forms" 
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:local="clr-namespace:_03.ShellTest"
+       Title="_03.ShellTest"
+       x:Class="_03.ShellTest.AppShell"
+       
+       BackgroundColor="Purple"
+       CurrentItem="{x:Reference about}">
+    <Shell.FlyoutHeader>
+        <Grid HeightRequest="100" BackgroundColor="WhiteSmoke">
+            <Image Source="tp.png" WidthRequest="150" HorizontalOptions="Center" VerticalOptions="Center"/>
+        </Grid>
+    </Shell.FlyoutHeader>
+    
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="首頁" ContentTemplate="{DataTemplate local:Home}"  />
+        <ShellContent x:Name="about" Title="關於" ContentTemplate="{DataTemplate local:About}"  />
+    </FlyoutItem>
+    
+    <MenuItem Clicked="MenuItem_Clicked" Text="官網連結"/>
+
+</Shell>
